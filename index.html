@@ -53,43 +53,37 @@
     <h2 class="text-center mb-4">📘 Daftar Link UAS</h2>
 
     <!-- ================= MAPEL 1 ================= -->
-    <div class="mapel-card">
+    <div class="mapel-card" id="card-english">
       <div class="mapel-name">Bahasa Inggris</div>
       <div class="row align-items-center">
-        <!-- Kiri: Tab Kelas -->
         <div class="col-md-4">
-          <div class="nav flex-column nav-pills" id="tab-english">
-            <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#englishX" data-link="https://example.com/uas/english/x">Kelas X</button>
-            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#englishXI" data-link="https://example.com/uas/english/xi">Kelas XI</button>
-            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#englishXII" data-link="https://example.com/uas/english/xii">Kelas XII</button>
+          <div class="nav flex-column nav-pills">
+            <button class="nav-link active" data-bs-link="https://example.com/uas/english/x">Kelas X</button>
+            <button class="nav-link" data-bs-link="https://example.com/uas/english/xi">Kelas XI</button>
+            <button class="nav-link" data-bs-link="https://example.com/uas/english/xii">Kelas XII</button>
           </div>
         </div>
-
-        <!-- Kanan: QR dan Link -->
         <div class="col-md-8 text-center qrcode">
-          <img id="qrcode-english" src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://example.com/uas/english/x" alt="QR Bahasa Inggris" />
-          <a id="link-english" href="https://example.com/uas/english/x" target="_blank">https://example.com/uas/english/x</a>
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://example.com/uas/english/x" alt="QR Bahasa Inggris" />
+          <a href="https://example.com/uas/english/x" target="_blank">https://example.com/uas/english/x</a>
         </div>
       </div>
     </div>
 
     <!-- ================= MAPEL 2 ================= -->
-    <div class="mapel-card">
+    <div class="mapel-card" id="card-math">
       <div class="mapel-name">Matematika</div>
       <div class="row align-items-center">
-        <!-- Kiri: Tab Kelas -->
         <div class="col-md-4">
-          <div class="nav flex-column nav-pills" id="tab-math">
-            <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#mathX" data-link="https://example.com/uas/math/x">Kelas X</button>
-            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#mathXI" data-link="https://example.com/uas/math/xi">Kelas XI</button>
-            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#mathXII" data-link="https://example.com/uas/math/xii">Kelas XII</button>
+          <div class="nav flex-column nav-pills">
+            <button class="nav-link active" data-bs-link="https://example.com/uas/math/x">Kelas X</button>
+            <button class="nav-link" data-bs-link="https://example.com/uas/math/xi">Kelas XI</button>
+            <button class="nav-link" data-bs-link="https://example.com/uas/math/xii">Kelas XII</button>
           </div>
         </div>
-
-        <!-- Kanan: QR dan Link -->
         <div class="col-md-8 text-center qrcode">
-          <img id="qrcode-math" src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://example.com/uas/math/x" alt="QR Matematika" />
-          <a id="link-math" href="https://example.com/uas/math/x" target="_blank">https://example.com/uas/math/x</a>
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://example.com/uas/math/x" alt="QR Matematika" />
+          <a href="https://example.com/uas/math/x" target="_blank">https://example.com/uas/math/x</a>
         </div>
       </div>
     </div>
@@ -98,22 +92,26 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // FUNGSI: Ubah QR & link saat tab diganti
-    document.querySelectorAll(".nav-pills button").forEach((btn) => {
-      btn.addEventListener("shown.bs.tab", (e) => {
-        const link = e.target.getAttribute("data-link");
-        const card = e.target.closest(".mapel-card");
-        const img = card.querySelector("img");
-        const a = card.querySelector("a");
+    document.querySelectorAll(".mapel-card").forEach((card) => {
+      const tabs = card.querySelectorAll(".nav-link");
+      const img = card.querySelector("img");
+      const a = card.querySelector("a");
 
-        img.style.opacity = 0;
-        setTimeout(() => {
-          img.src = "https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=" + encodeURIComponent(link);
-          img.style.opacity = 1;
-        }, 200);
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          // Hapus active dari semua tombol tab
+          tabs.forEach((t) => t.classList.remove("active"));
+          tab.classList.add("active");
 
-        a.href = link;
-        a.textContent = link;
+          const link = tab.getAttribute("data-bs-link");
+          img.style.opacity = 0.2;
+          setTimeout(() => {
+            img.src = "https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=" + encodeURIComponent(link);
+            a.href = link;
+            a.textContent = link;
+            img.style.opacity = 1;
+          }, 200);
+        });
       });
     });
   </script>
