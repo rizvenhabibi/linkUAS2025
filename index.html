@@ -14,12 +14,13 @@
       background: white;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       padding: 20px;
     }
     .mapel-name {
       font-weight: bold;
-      font-size: 1.25rem;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
     }
     .qrcode img {
       width: 120px;
@@ -30,9 +31,13 @@
       margin: 5px 0;
       text-decoration: none;
       color: #0d6efd;
+      font-size: 0.95rem;
     }
     .tab-content a:hover {
       text-decoration: underline;
+    }
+    .nav-pills .nav-link.active {
+      background-color: #0d6efd;
     }
   </style>
 </head>
@@ -40,24 +45,27 @@
   <div class="container">
     <h2 class="mb-4 text-center">📘 Daftar Link UAS</h2>
 
-    <!-- Contoh Baris 1 (Nama Mapel di Kiri) -->
-    <div class="row align-items-center mapel-row">
+    <!-- ========== MAPEL 1 ========== -->
+    <div class="row mapel-row align-items-center">
       <div class="col-md-6">
         <div class="mapel-name">Bahasa Inggris</div>
-        <ul class="nav nav-tabs mt-3" id="tab-english">
-          <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#englishX">Kelas X</a></li>
-          <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#englishXI">Kelas XI</a></li>
-          <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#englishXII">Kelas XII</a></li>
-        </ul>
-        <div class="tab-content mt-2">
-          <div class="tab-pane fade show active" id="englishX">
-            <a href="https://example.com/uas/english/x">https://example.com/uas/english/x</a>
+        <div class="d-flex">
+          <div class="nav flex-column nav-pills me-3" id="v-tabs-english" role="tablist">
+            <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#englishX">Kelas X</button>
+            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#englishXI">Kelas XI</button>
+            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#englishXII">Kelas XII</button>
           </div>
-          <div class="tab-pane fade" id="englishXI">
-            <a href="https://example.com/uas/english/xi">https://example.com/uas/english/xi</a>
-          </div>
-          <div class="tab-pane fade" id="englishXII">
-            <a href="https://example.com/uas/english/xii">https://example.com/uas/english/xii</a>
+          <div class="tab-content flex-grow-1">
+            <div class="tab-pane fade show active" id="englishX">
+              <a href="https://example.com/uas/english/x">https://example.com/uas/english/x</a>
+              <a href="https://example.com/uas/english/x2">https://example.com/uas/english/x2</a>
+            </div>
+            <div class="tab-pane fade" id="englishXI">
+              <a href="https://example.com/uas/english/xi">https://example.com/uas/english/xi</a>
+            </div>
+            <div class="tab-pane fade" id="englishXII">
+              <a href="https://example.com/uas/english/xii">https://example.com/uas/english/xii</a>
+            </div>
           </div>
         </div>
       </div>
@@ -67,24 +75,27 @@
       </div>
     </div>
 
-    <!-- Contoh Baris 2 (QR di Kiri) -->
-    <div class="row align-items-center mapel-row flex-md-row-reverse">
+    <!-- ========== MAPEL 2 (dibalik posisi) ========== -->
+    <div class="row mapel-row align-items-center flex-md-row-reverse">
       <div class="col-md-6">
         <div class="mapel-name">Matematika</div>
-        <ul class="nav nav-tabs mt-3" id="tab-math">
-          <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#mathX">Kelas X</a></li>
-          <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#mathXI">Kelas XI</a></li>
-          <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#mathXII">Kelas XII</a></li>
-        </ul>
-        <div class="tab-content mt-2">
-          <div class="tab-pane fade show active" id="mathX">
-            <a href="https://example.com/uas/math/x">https://example.com/uas/math/x</a>
+        <div class="d-flex">
+          <div class="nav flex-column nav-pills me-3" id="v-tabs-math" role="tablist">
+            <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#mathX">Kelas X</button>
+            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#mathXI">Kelas XI</button>
+            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#mathXII">Kelas XII</button>
           </div>
-          <div class="tab-pane fade" id="mathXI">
-            <a href="https://example.com/uas/math/xi">https://example.com/uas/math/xi</a>
-          </div>
-          <div class="tab-pane fade" id="mathXII">
-            <a href="https://example.com/uas/math/xii">https://example.com/uas/math/xii</a>
+          <div class="tab-content flex-grow-1">
+            <div class="tab-pane fade show active" id="mathX">
+              <a href="https://example.com/uas/math/x">https://example.com/uas/math/x</a>
+              <a href="https://example.com/uas/math/x2">https://example.com/uas/math/x2</a>
+            </div>
+            <div class="tab-pane fade" id="mathXI">
+              <a href="https://example.com/uas/math/xi">https://example.com/uas/math/xi</a>
+            </div>
+            <div class="tab-pane fade" id="mathXII">
+              <a href="https://example.com/uas/math/xii">https://example.com/uas/math/xii</a>
+            </div>
           </div>
         </div>
       </div>
