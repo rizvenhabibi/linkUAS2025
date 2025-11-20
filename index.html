@@ -3,65 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UAS Link DKV & TKR</title>
+    <title>Link Absen UAS 2025/2026</title>
 
-    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-     <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-        }
 
+    <style>
+        html, body {
+            height: 100%;
+        }
         body {
             display: flex;
             flex-direction: column;
+            background: #f8f9fa;
+            margin: 0;
         }
-
-        .main-container {
-            flex: 1; /* supaya footer tetap di bawah */
+        main {
+            flex: 1;
         }
-
-        h2 {
-            text-align: center !important;
-            width: 100%;
-        }
-
         footer {
             text-align: center;
-            padding: 15px 0;
+            padding: 14px 0;
+            margin-top: auto;
+            background: #fff;
             color: #666;
+            border-top: 1px solid #ddd;
+        }
+        .btn-custom {
+            border-radius: 40px;
+            font-size: 1.1rem;
+            padding: 14px 0;
+            transition: 0.2s ease;
+        }
+        .btn-custom:hover {
+            transform: translateY(-4px);
+            opacity: 0.9;
         }
     </style>
 </head>
-<body class="p-4">
-  <!-- Judul Halaman -->
-        <h2 class="mb-4 fw-bold">Link Absen UAS 2025/2026</h2>
-   <ul class="nav nav-pills justify-content-center gap-3">
 
-    <li class="nav-item">
-        <a class="nav-link px-4 py-2 rounded-pill text-white" 
-           style="background:#0275d8;" 
-           href="#" target="_blank">
-            <i class="fa-solid fa-camera me-2"></i> DKV
-        </a>
-    </li>
+<body>
 
-    <li class="nav-item">
-        <a class="nav-link px-4 py-2 rounded-pill text-white" 
-           style="background:#d9534f;" 
-           href="#" target="_blank">
-            <i class="fa-solid fa-wrench me-2"></i> TKR
-        </a>
-    </li>
-        <!-- Footer -->
-        <footer class="text-muted mt-5 pt-4">
-            <p class="mb-0">&copy; SMK ITABA 2025</p>
-        </footer>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <main class="container py-5">
+
+        <!-- Judul -->
+        <h2 class="text-center fw-bold mb-5">Link Absen UAS 2025/2026</h2>
+
+        <!-- Grid Tombol -->
+        <div class="row justify-content-center g-4">
+
+            <!-- Tombol DKV -->
+            <div class="col-12 col-md-4 d-flex justify-content-center">
+                <a href="#" 
+                   class="btn btn-danger text-white w-100 btn-custom">
+                    <i class="fa-solid fa-camera me-2"></i> DKV
+                </a>
+            </div>
+
+            <!-- Tombol TKR -->
+            <div class="col-12 col-md-4 d-flex justify-content-center">
+                <a href="#" 
+                   class="btn btn-primary text-white w-100 btn-custom">
+                    <i class="fa-solid fa-wrench me-2"></i> TKR
+                </a>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        © SMK ITABA 2025
+    </footer>
+
 </body>
 </html>
